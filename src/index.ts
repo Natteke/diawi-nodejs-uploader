@@ -1,9 +1,8 @@
-export interface A {
-    a: 1,
-}
+// import { upload } from '@app/core';
 
-export const z = ():A => ({
-    a: 1,
-});
+(async () => {
+    // const res = await upload({ token, file });
 
-console.log(123);
+    console.dir('============== COMPLETE ==============');
+    // console.dir(res);
+})();
