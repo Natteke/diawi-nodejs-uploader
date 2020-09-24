@@ -1,6 +1,9 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const DeclarationBundlerPlugin = require('declaration-bundler-webpack-plugin');
 const webpack = require('webpack');
+
+const distPath = path.resolve(__dirname, './dist');
 
 module.exports = {
     entry: {
@@ -8,9 +11,9 @@ module.exports = {
     },
     output: {
         filename: '[name]/index.js',
-        path: `${__dirname}/dist`,
+        path: distPath,
     },
-    mode: 'development',
+    mode: 'production',
     externals: [nodeExternals()],
     module: {
         rules: [
@@ -29,6 +32,10 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     plugins: [
-        new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
+        new DeclarationBundlerPlugin({
+            moduleName: '[name]',
+            out: path.resolve(distPath, '[name]'),
+        }),
+        // new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
     ],
 };
