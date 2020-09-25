@@ -3,16 +3,21 @@
   "version": "0.0.1",
   "main": "index.js",
   "author": "Andrey Ponomarenko",
+  "description": "A nodejs integration with Diawi app distribution api",
   "license": "MIT",
   "repository": {
     "url": "git@github.com:Natteke/diawi-nodejs-uploader.git"
   },
+  "keywords": ["ipa", "apk", "diawi", "nodejs", "node", "api", "upload", "mobile", "app", "ci", "cd", "too;"],
   "publishConfig": {
     "access": "public",
     "branches": ["master"]
   },
   "files": [
-    "dist/"
+    "dist/",
+    "CHANGELOG.md",
+    "package.json",
+    "package-lock.json"
   ],
   "scripts": {
     "r": "yarn webpack && node dist/index.js",
