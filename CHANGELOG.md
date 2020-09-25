@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.7...v1.0.8) (2020-09-25)
+
+
+### Bug Fixes
+
+* fix uploading percent ([32e92f8](https://github.com/Natteke/diawi-nodejs-uploader/commit/32e92f8a24da2a22adadc05072519778ef48e149))
+
 ## [1.0.7](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.6...v1.0.7) (2020-09-25)
 
 
