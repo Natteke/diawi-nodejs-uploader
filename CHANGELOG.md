@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.2...v1.0.3) (2020-09-25)
+
+
+### Bug Fixes
+
+* include main property in package.json ([ba27bc9](https://github.com/Natteke/diawi-nodejs-uploader/commit/ba27bc9b19ddb84a127f88602a96af9eaf0928b3))
+
 ## [1.0.2](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.1...v1.0.2) (2020-09-25)
 
 
