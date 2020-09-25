@@ -29,7 +29,7 @@
     ]
   },
   "files": [
-    "dist/",
+    "dist",
     "CHANGELOG.md",
     "package.json",
     "package-lock.json"
