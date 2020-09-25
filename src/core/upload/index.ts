@@ -27,14 +27,12 @@ export const upload = async (props: ApiUploadProps, options: Options = {}) => {
 
     // recursive status checks
     const checkStatus = async (): Promise<ApiStatusResponse> => {
+        if (statusCallsCount > maxApiStatusCalls) throw new Error('max api calls exceeded');
+
         const jobStatus = await fetchJobStatus({ token, job });
         const { status, message } = jobStatus;
 
-        if (statusCallsCount > maxApiStatusCalls) {
-            statusCallsCount += 1;
-            throw new Error('max api calls exceeded');
-        }
-
+        statusCallsCount += 1;
         onStatusProgress(status);
 
         switch (status) {
