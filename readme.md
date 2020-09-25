@@ -1,6 +1,6 @@
 # diawi-nodejs-uploader
 
-A NodeJS tool for [Diawi](diawi.com) integration written with [Typescript](https://www.typescriptlang.org/)
+A NodeJS tool for [Diawi](https://www.diawi.com/) integration written with [Typescript](https://www.typescriptlang.org/)
 ## Installation
 
 ```sh
@@ -13,7 +13,7 @@ $ npm install diawi-nodejs-uploader
 
 #### Programmatic
 
-All options exept token and file are optional.
+All options except token and file are optional.
 
 ```js
 import { upload } from 'diawi-nodejs-uploader';
