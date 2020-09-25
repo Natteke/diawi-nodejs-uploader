@@ -8,10 +8,25 @@
   "repository": {
     "url": "git@github.com:Natteke/diawi-nodejs-uploader.git"
   },
-  "keywords": ["ipa", "apk", "diawi", "nodejs", "node", "api", "upload", "mobile", "app", "ci", "cd", "too;"],
+  "keywords": [
+    "ipa",
+    "apk",
+    "diawi",
+    "nodejs",
+    "node",
+    "api",
+    "upload",
+    "mobile",
+    "app",
+    "ci",
+    "cd",
+    "too;"
+  ],
   "publishConfig": {
     "access": "public",
-    "branches": ["master"]
+    "branches": [
+      "master"
+    ]
   },
   "files": [
     "dist/",
