@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "Andrey Ponomarenko",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "A nodejs integration with Diawi app distribution api",
   "license": "MIT",
   "repository": {
