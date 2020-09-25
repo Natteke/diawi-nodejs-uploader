@@ -2,7 +2,7 @@
   "name": "diawi-nodejs-uploader",
   "version": "0.0.1",
   "author": "Andrey Ponomarenko",
-  "main": "dist/core/index.js",
+  "main": "dist/index.js",
   "description": "A nodejs integration with Diawi app distribution api",
   "license": "MIT",
   "repository": {
