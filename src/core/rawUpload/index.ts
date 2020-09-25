@@ -29,8 +29,8 @@ export const rawUpload = async (params: ApiUploadProps, options: UploadOptions =
     let bytesWritten = 0;
     fileStream.on('data', (chunk) => {
         bytesWritten += chunk.length;
-        const progressPercent = Number(((bytesWritten / fileSize) * 100).toFixed(0));
-        onUploadProgress({ progressPercent, bytesWritten, fileSize });
+        const progressPercent = Number(((bytesWritten / fileSize) * 100).toFixed(2));
+        onUploadProgress(progressPercent, { bytesWritten, fileSize });
     });
 
     const data = await request({
