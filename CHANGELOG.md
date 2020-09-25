@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.8...v1.0.9) (2020-09-25)
+
+
+### Bug Fixes
+
+* fix max api status calls increment ([cfbef54](https://github.com/Natteke/diawi-nodejs-uploader/commit/cfbef54217d2d8a7cadc2920656d8a3db7925163))
+
 ## [1.0.8](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.7...v1.0.8) (2020-09-25)
 
 
