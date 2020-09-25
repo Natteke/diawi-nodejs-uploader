@@ -4,6 +4,12 @@
   "main": "index.js",
   "author": "Andrey Ponomarenko",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "r": "yarn webpack && node dist/index.js",
     "build": "yarn tsc && yarn tscpaths -p tsconfig.json -s ./src -o ./dist",
