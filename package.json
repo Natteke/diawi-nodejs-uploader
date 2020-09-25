@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Andrey Ponomarenko",
   "license": "MIT",
+  "repository": {
+    "url": "git@github.com:Natteke/diawi-nodejs-uploader.git"
+  },
   "publishConfig": {
     "access": "public",
     "branches": ["master"]
