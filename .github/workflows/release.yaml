@@ -12,12 +12,10 @@ jobs:
       matrix:
         node-version: [12.18.4]
     steps:
-      - name: Install yarn
-        run: npm install -g yarn
       - name: Install dependencies
-        run: yarn
+        run: npm install
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
+        run: npm run release
