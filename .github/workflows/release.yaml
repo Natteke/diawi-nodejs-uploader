@@ -13,7 +13,7 @@ jobs:
         node-version: [12.18.4]
     steps:
       - name: Install dependencies
-        run: npm install
+        run: npm install && npm prune
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
