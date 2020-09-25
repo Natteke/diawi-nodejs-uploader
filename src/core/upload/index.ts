@@ -1,40 +1,49 @@
-import { ApiStatusResponse, UploadOptions } from '@app/types';
+import { ApiStatusResponse, ApiUploadProps, UploadOptions } from '@app/types';
 import { rawUpload, fetchJobStatus } from '@app/core';
 import { JOB_STATUS, MAX_API_STATUS_CALLS } from '@app/constants';
+import { noop, sleep } from '@app/utils';
 
-interface Options {
+interface Options extends UploadOptions{
     maxApiStatusCalls?: number;
+    onStatusProgress?: (status: JOB_STATUS) => any;
 }
 
 // upload file, and wait for proceeding
-export const upload = async (props: UploadOptions, options: Options = {}) => {
+export const upload = async (props: ApiUploadProps, options: Options = {}) => {
     const { token } = props;
+
+    // default params
     const {
         maxApiStatusCalls = MAX_API_STATUS_CALLS,
+        onUploadProgress = noop,
+        onStatusProgress = noop,
     } = options;
 
-    const { job } = await rawUpload(props);
+    const { job } = await rawUpload(props, {
+        onUploadProgress,
+    });
+
     let statusCallsCount = 0;
 
+    // recursive status checks
     const checkStatus = async (): Promise<ApiStatusResponse> => {
         const jobStatus = await fetchJobStatus({ token, job });
         const { status, message } = jobStatus;
 
         if (statusCallsCount > maxApiStatusCalls) {
             statusCallsCount += 1;
-            throw new Error('max status api calls exceeded');
+            throw new Error('max api calls exceeded');
         }
 
-        console.log('status', status);
+        onStatusProgress(status);
 
         switch (status) {
             case JOB_STATUS.ERROR: {
                 throw new Error(message);
             }
             case JOB_STATUS.PROCEEDING: {
-                console.log('status PROCEEDING', status);
+                await sleep(300);
                 return checkStatus();
-                break;
             }
             default: {
                 return jobStatus;

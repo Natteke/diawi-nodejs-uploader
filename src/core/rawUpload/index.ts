@@ -1,4 +1,4 @@
-import { AnyFunction, ApiUploadProps, ApiUploadResponse, UploadOptions } from '@app/types';
+import { ApiUploadProps, ApiUploadResponse, UploadOptions } from '@app/types';
 import * as fs from 'fs';
 import * as path from 'path';
 import { createFormData, noop } from '@app/utils';
@@ -6,12 +6,15 @@ import { API_UPLOAD } from '@app/constants';
 import { request } from '@app/core';
 
 // upload file, without checking the status
-export const rawUpload = async (params: UploadOptions): Promise<ApiUploadResponse> => {
+export const rawUpload = async (params: ApiUploadProps, options: UploadOptions = {}): Promise<ApiUploadResponse> => {
     const {
         file,
-        onUploadProgress = noop,
         ...restParams
     } = params;
+
+    const {
+        onUploadProgress = noop,
+    } = options;
 
     const filePath = path.resolve(file);
 
@@ -26,7 +29,7 @@ export const rawUpload = async (params: UploadOptions): Promise<ApiUploadRespons
     let bytesWritten = 0;
     fileStream.on('data', (chunk) => {
         bytesWritten += chunk.length;
-        const progressPercent = ((bytesWritten / fileSize) * 100).toFixed(2);
+        const progressPercent = Number(((bytesWritten / fileSize) * 100).toFixed(0));
         onUploadProgress({ progressPercent, bytesWritten, fileSize });
     });
 

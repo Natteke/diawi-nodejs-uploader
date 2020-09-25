@@ -12,8 +12,8 @@ export interface ApiUploadProps {
     installation_notifications?: boolean;      // receive notifications each time someone installs the app (only starter/premium/enterprise accounts)
 }
 
-export interface UploadOptions extends ApiUploadProps {
-    onUploadProgress?: AnyFunction;
+export interface UploadOptions {
+    onUploadProgress?: (args: { progressPercent: number, bytesWritten: number, fileSize: number }) => any;
 }
 
 export interface ApiUploadResponse {
