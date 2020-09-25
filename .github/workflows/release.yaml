@@ -10,9 +10,11 @@ test-and-release:
   runs-on: ubuntu-18.04
   steps:
     - name: Install dependencies
-        run: yarn
+        run: |
+          yarn
     - name: Release
         env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
+        run: |
+          yarn release
