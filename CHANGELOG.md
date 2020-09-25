@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.5...v1.0.6) (2020-09-25)
+
+
+### Bug Fixes
+
+* include types in package.json ([34eeaf1](https://github.com/Natteke/diawi-nodejs-uploader/commit/34eeaf18b791e574e857261b5aaad41675863590))
+
 ## [1.0.5](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.4...v1.0.5) (2020-09-25)
 
 
