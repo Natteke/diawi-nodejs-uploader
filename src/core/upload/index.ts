@@ -1,6 +1,6 @@
 import { ApiStatusResponse, ApiUploadProps, UploadOptions } from '@app/types';
 import { rawUpload, fetchJobStatus } from '@app/core';
-import { JOB_STATUS, MAX_API_STATUS_CALLS } from '@app/constants';
+import { JOB_STATUS, DEFAULT_MAX_API_STATUS_CALLS } from '@app/constants';
 import { noop, sleep } from '@app/utils';
 
 interface Options extends UploadOptions{
@@ -14,7 +14,7 @@ export const upload = async (props: ApiUploadProps, options: Options = {}) => {
 
     // default params
     const {
-        maxApiStatusCalls = MAX_API_STATUS_CALLS,
+        maxApiStatusCalls = DEFAULT_MAX_API_STATUS_CALLS,
         onUploadProgress = noop,
         onStatusProgress = noop,
     } = options;

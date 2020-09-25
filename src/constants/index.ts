@@ -1,6 +1,6 @@
 export const API_UPLOAD = 'https://upload.diawi.com';
 export const API_STATUS = 'https://upload.diawi.com/status';
-export const MAX_API_STATUS_CALLS = 30;
+export const DEFAULT_MAX_API_STATUS_CALLS = 30;
 
 export enum JOB_STATUS {
     OK = 2000,
