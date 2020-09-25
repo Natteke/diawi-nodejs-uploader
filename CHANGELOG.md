@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.6...v1.0.7) (2020-09-25)
+
+
+### Bug Fixes
+
+* create readme.md ([cd7c2b7](https://github.com/Natteke/diawi-nodejs-uploader/commit/cd7c2b713e831b0c9410fae1eaa781bf90d57f46))
+
 ## [1.0.6](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.5...v1.0.6) (2020-09-25)
 
 
