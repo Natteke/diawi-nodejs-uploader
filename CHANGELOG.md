@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.3...v1.0.4) (2020-09-25)
+
+
+### Bug Fixes
+
+* add types in export ([1418957](https://github.com/Natteke/diawi-nodejs-uploader/commit/14189576748bd840b95be7b304a663db9248af0b))
+
 ## [1.0.3](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.0.2...v1.0.3) (2020-09-25)
 
 
