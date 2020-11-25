@@ -14,6 +14,11 @@ export interface ApiUploadProps {
 
 export interface UploadOptions {
     onUploadProgress?: (progressPercent: number, args: {bytesWritten: number, fileSize: number }) => any;
+    apiUploadEndpoint?: string;
+}
+
+export interface StatusOptions {
+    apiStatusEndpoint?: string;
 }
 
 export interface ApiUploadResponse {

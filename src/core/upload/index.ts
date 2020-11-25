@@ -1,9 +1,9 @@
-import { ApiStatusResponse, ApiUploadProps, UploadOptions } from '@app/types';
+import { ApiStatusResponse, ApiUploadProps, StatusOptions, UploadOptions } from '@app/types';
 import { rawUpload, fetchJobStatus } from '@app/core';
-import { JOB_STATUS, DEFAULT_MAX_API_STATUS_CALLS } from '@app/constants';
+import { JOB_STATUS, DEFAULT_MAX_API_STATUS_CALLS, API_UPLOAD, API_STATUS } from '@app/constants';
 import { noop, sleep } from '@app/utils';
 
-interface Options extends UploadOptions{
+interface Options extends UploadOptions, StatusOptions {
     maxApiStatusCalls?: number;
     onStatusProgress?: (status: JOB_STATUS) => any;
 }
@@ -17,10 +17,13 @@ export const upload = async (props: ApiUploadProps, options: Options = {}) => {
         maxApiStatusCalls = DEFAULT_MAX_API_STATUS_CALLS,
         onUploadProgress = noop,
         onStatusProgress = noop,
+        apiUploadEndpoint = API_UPLOAD,
+        apiStatusEndpoint = API_STATUS,
     } = options;
 
     const { job } = await rawUpload(props, {
         onUploadProgress,
+        apiUploadEndpoint,
     });
 
     let statusCallsCount = 0;
@@ -29,7 +32,7 @@ export const upload = async (props: ApiUploadProps, options: Options = {}) => {
     const checkStatus = async (): Promise<ApiStatusResponse> => {
         if (statusCallsCount > maxApiStatusCalls) throw new Error('max api calls exceeded');
 
-        const jobStatus = await fetchJobStatus({ token, job });
+        const jobStatus = await fetchJobStatus({ token, job }, { apiStatusEndpoint });
         const { status, message } = jobStatus;
 
         statusCallsCount += 1;

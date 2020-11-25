@@ -14,6 +14,7 @@ export const rawUpload = async (params: ApiUploadProps, options: UploadOptions =
 
     const {
         onUploadProgress = noop,
+        apiUploadEndpoint = API_UPLOAD,
     } = options;
 
     const filePath = path.resolve(file);
@@ -35,7 +36,7 @@ export const rawUpload = async (params: ApiUploadProps, options: UploadOptions =
 
     const data = await request({
         method: 'post',
-        host: new URL(API_UPLOAD).host,
+        host: new URL(apiUploadEndpoint).host,
         headers: form.getHeaders(),
         formData: form,
     });
