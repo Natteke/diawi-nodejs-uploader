@@ -44,6 +44,7 @@ const result = await upload({
     apiUploadEndpoint: 'rewriteDefauitDiawiUploadEndpoint',
     apiStatusEndpoint: 'rewriteDefauitDiawiStatusEndpoint',
     maxApiStatusCalls: 99,
+    sleepMilliseconds: 600,
     onUploadProgress: (progressPercent) => {
         console.log(`uploading: ${progressPercent}`);
     },
