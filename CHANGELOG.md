@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.1.5...v1.1.6) (2025-10-08)
+
+
+### Bug Fixes
+
+* release ([0d9daf6](https://github.com/Natteke/diawi-nodejs-uploader/commit/0d9daf65ff64b2aec325d049297f3dad067f5bad))
+
 ## [1.1.5](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.1.4...v1.1.5) (2025-10-08)
 
 
