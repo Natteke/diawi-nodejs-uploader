@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.1.1...v1.1.2) (2025-10-08)
+
+
+### Bug Fixes
+
+* fix typo DEFAULT_SLEEP_MILLISECONDS ([590c2b4](https://github.com/Natteke/diawi-nodejs-uploader/commit/590c2b4434a28dea22d60e4df4f3ae17f8053023))
+
 ## [1.1.1](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.1.0...v1.1.1) (2020-11-25)
 
 
