@@ -16,7 +16,7 @@ $ npm install diawi-nodejs-uploader
 All options except token and file are optional.
 
 ```js
-import { upload } from 'diawi-nodejs-uploader';
+import { upload } from 'diawi-nodejs-uploader'; 
 
 const result = await upload({
         file: '/files/bundle.apk',
