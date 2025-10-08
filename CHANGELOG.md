@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.1.3...v1.1.4) (2025-10-08)
+
+
+### Bug Fixes
+
+* rename readme file ([1a20797](https://github.com/Natteke/diawi-nodejs-uploader/commit/1a207978bd80e5411319449943d6349e7c977daa))
+
 ## [1.1.3](https://github.com/Natteke/diawi-nodejs-uploader/compare/v1.1.2...v1.1.3) (2025-10-08)
 
 
