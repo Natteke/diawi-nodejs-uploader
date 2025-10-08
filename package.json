@@ -7,7 +7,7 @@
   "description": "A nodejs integration with Diawi app distribution api",
   "license": "MIT",
   "repository": {
-    "url": "git@github.com:Natteke/diawi-nodejs-uploader.git"
+    "url": "https://github.com/Natteke/diawi-nodejs-uploader.git"
   },
   "keywords": [
     "ipa",
