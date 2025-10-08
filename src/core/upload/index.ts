@@ -1,10 +1,11 @@
 import { ApiStatusResponse, ApiUploadProps, StatusOptions, UploadOptions } from '@app/types';
 import { rawUpload, fetchJobStatus } from '@app/core';
-import { JOB_STATUS, DEFAULT_MAX_API_STATUS_CALLS, API_UPLOAD, API_STATUS } from '@app/constants';
+import { JOB_STATUS, DEFAULT_MAX_API_STATUS_CALLS, DEFAULT_PROCEEDING_SLEEP_TIME, API_UPLOAD, API_STATUS } from '@app/constants';
 import { noop, sleep } from '@app/utils';
 
 interface Options extends UploadOptions, StatusOptions {
     maxApiStatusCalls?: number;
+    sleepMilliseconds?: number;
     onStatusProgress?: (status: JOB_STATUS) => any;
 }
 
@@ -15,6 +16,7 @@ export const upload = async (props: ApiUploadProps, options: Options = {}) => {
     // default params
     const {
         maxApiStatusCalls = DEFAULT_MAX_API_STATUS_CALLS,
+        sleepMilliseconds = DEFAULT_SLEEP_MILLISECONDS,
         onUploadProgress = noop,
         onStatusProgress = noop,
         apiUploadEndpoint = API_UPLOAD,
@@ -43,7 +45,7 @@ export const upload = async (props: ApiUploadProps, options: Options = {}) => {
                 throw new Error(message);
             }
             case JOB_STATUS.PROCEEDING: {
-                await sleep(300);
+                await sleep(sleepMilliseconds);
                 return checkStatus();
             }
             default: {
