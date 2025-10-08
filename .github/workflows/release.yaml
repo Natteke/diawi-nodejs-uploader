@@ -6,6 +6,10 @@ on:
 
 jobs:
   release:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     name: release
     runs-on: ubuntu-latest
     strategy:
@@ -20,6 +24,6 @@ jobs:
         run: npm run build
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
