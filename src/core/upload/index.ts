@@ -1,6 +1,6 @@
 import { ApiStatusResponse, ApiUploadProps, StatusOptions, UploadOptions } from '@app/types';
 import { rawUpload, fetchJobStatus } from '@app/core';
-import { JOB_STATUS, DEFAULT_MAX_API_STATUS_CALLS, DEFAULT_PROCEEDING_SLEEP_TIME, API_UPLOAD, API_STATUS } from '@app/constants';
+import { JOB_STATUS, DEFAULT_MAX_API_STATUS_CALLS, DEFAULT_SLEEP_MILLISECONDS, API_UPLOAD, API_STATUS } from '@app/constants';
 import { noop, sleep } from '@app/utils';
 
 interface Options extends UploadOptions, StatusOptions {
